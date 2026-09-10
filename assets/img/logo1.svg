@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+
+    <!-- Main 'W' Gradient -->
+    <linearGradient id="wGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="30%" stop-color="#818cf8" />
+      <stop offset="70%" stop-color="#c084fc" />
+      <stop offset="100%" stop-color="#f43f5e" />
+    </linearGradient>
+
+    <!-- Accent Overlay Gradient -->
+    <linearGradient id="accentGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#f43f5e" stop-opacity="0.2" />
+    </linearGradient>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.5" />
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#818cf8" flood-opacity="0.25" />
+    </filter>
+
+    <!-- Outer Glow -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="24" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Canvas Background Card -->
+  <rect width="512" height="512" rx="96" fill="url(#bgGrad)" />
+
+  <!-- Ambient Background Glow -->
+  <circle cx="256" cy="260" r="140" fill="url(#wGrad)" opacity="0.15" filter="blur(40px)" />
+
+  <!-- Geometric Grid Accent (Subtle Tech Lines) -->
+  <g opacity="0.05" stroke="#ffffff" stroke-width="1">
+    <circle cx="256" cy="256" r="180" fill="none" />
+    <circle cx="256" cy="256" r="120" fill="none" />
+  </g>
+
+  <!-- Main 'W' Structure -->
+  <g filter="url(#dropShadow)">
+    <!-- Base Outer Glow Layer -->
+    <path d="M 110 160 L 196 352 L 256 224 L 316 352 L 402 160"
+          fill="none"
+          stroke="url(#wGrad)"
+          stroke-width="54"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          opacity="0.3"
+          filter="url(#glow)" />
+
+    <!-- Main Solid Letterform -->
+    <path d="M 110 160 L 196 352 L 256 224 L 316 352 L 402 160"
+          fill="none"
+          stroke="url(#wGrad)"
+          stroke-width="48"
+          stroke-linecap="round"
+          stroke-linejoin="round" />
+
+    <!-- Overlapping Inner Highlight (Adds 3D/Ribbon Depth) -->
+    <path d="M 110 160 L 196 352 L 256 224"
+          fill="none"
+          stroke="url(#accentGrad)"
+          stroke-width="24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          opacity="0.6" />
+  </g>
+
+  <!-- Decorative Modern Accent Spheres -->
+  <circle cx="402" cy="160" r="8" fill="#ffffff" filter="url(#glow)" />
+  <circle cx="110" cy="160" r="6" fill="#38bdf8" opacity="0.8" />
+</svg>
