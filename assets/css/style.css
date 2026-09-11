@@ -145,3 +145,7 @@ html {
 section {
   scroll-margin-top: 90px;
 }
+.navbar {
+  top: 0;
+  z-index: 1030;
+}
